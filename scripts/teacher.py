@@ -281,7 +281,7 @@ def create_grade_issue(filename: str, review: dict) -> None:
     body = format_grade_body(review)
 
     labels = ["teacher", "grade", filename]
-    if grade >= 90:
+    if grade >= 80:
         labels.append("zinsser-ready")
     ensure_labels_exist(labels)
     create_issue(title, body, labels)
@@ -304,7 +304,7 @@ def handle_grade_issue(filename: str, review: dict) -> None:
         print(f"Updated grade issue #{existing_issue} with new grade: {grade}/100")
 
         # Add zinsser-ready label if grade reached 90+
-        if grade >= 90:
+        if grade >= 80:
             add_label_to_issue(existing_issue, "zinsser-ready")
             print(f"Added zinsser-ready label to issue #{existing_issue}")
     else:
