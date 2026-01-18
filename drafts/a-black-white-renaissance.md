@@ -46,9 +46,9 @@ That matters. If these cameras were not selling, Leica would have stopped making
 
 ## What a monochrome sensor really changes
 
-A monochrome sensor records only one thing: how much light each pixel receives. A color sensor does the same thing, except it measures light through red, green, and blue filters and reconstructs color from that information.
+A monochrome sensor records only one thing: how much light each pixel receives. A color sensor also records light, but it does so through red, green, and blue filters, then reconstructs color from those separate samples.
 
-Two technical consequences follow. First, resolution. In a color sensor, each output pixel is reconstructed from red, green, and blue samples. In a monochrome sensor, every pixel records luminance. All else being equal, this produces higher effective resolution. Second, sharpness. Color sensors place a filter array in front of the sensor. Monochrome sensors do not. Less sits between the light and the photosite.
+Two technical consequences follow: resolution and sharpness. In a color sensor, each output pixel is reconstructed from red, green, and blue samples; in a monochrome sensor, every pixel records luminance. All else being equal, that usually means higher effective resolution. And because color sensors place a filter array in front of the sensor while monochrome sensors do not, there’s simply less between the light and the photosite—often translating into crisper edges.
 
 These advantages are real, but secondary.
 
