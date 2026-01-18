@@ -14,6 +14,10 @@ This mattered. It shaped how you looked at the world before you raised the camer
 
 Over time, color became dominant. But even as color took over most photographic use, black and white remained a deliberate option—something you chose at the moment you loaded the film.
 
+Monochrome-only digital cameras aren’t a quirky limitation—they restore black and white as a decision made before the shutter, not a look applied after.
+
+Leica proved it could sell; Ricoh may prove it can be normal.
+
 ## Digital photography collapses the choice
 
 Digital photography changed that relationship.
@@ -25,8 +29,6 @@ Digital also introduced something film never had: flexibility after the fact. Yo
 For the first time, black and white no longer required commitment. It became a reversible decision, made in software, downstream from the act of photographing itself.
 
 And so, for two decades, that became the default state of things. Digital photography was color by design. Black and white survived as an interpretation of a color file, not as a way of seeing chosen in advance.
-
-Monochrome-only digital cameras aren’t a quirky limitation—they restore photography as a deliberate choice made before the shutter, not a look applied after. Leica proved the idea; Ricoh’s GR IV Monochrome suggests that kind of commitment is becoming practical again.
 
 ## Leica breaks the rule
 
