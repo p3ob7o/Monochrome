@@ -176,6 +176,15 @@ def add_comment_to_issue(issue_number: int, body: str) -> None:
     )
 
 
+def add_label_to_issue(issue_number: int, label: str) -> None:
+    """Add a label to an existing issue."""
+    ensure_labels_exist([label])
+    subprocess.run(
+        ["gh", "issue", "edit", str(issue_number), "--add-label", label],
+        check=True,
+    )
+
+
 COMPARE_FEEDBACK_PROMPT = """Given a new feedback item and a list of existing feedback issues, determine:
 1. Is this feedback essentially the same as an existing issue? → "duplicate"
 2. Is this feedback related to (but different from) an existing issue? → "related" + issue number
@@ -261,6 +270,8 @@ def create_grade_issue(filename: str, review: dict) -> None:
     body = format_grade_body(review)
 
     labels = ["teacher", "grade", filename]
+    if grade >= 90:
+        labels.append("zinsser-ready")
     ensure_labels_exist(labels)
     create_issue(title, body, labels)
     print(f"Created grade issue: {title}")
@@ -280,6 +291,11 @@ def handle_grade_issue(filename: str, review: dict) -> None:
         update_issue_title(existing_issue, new_title)
         add_comment_to_issue(existing_issue, comment_body)
         print(f"Updated grade issue #{existing_issue} with new grade: {grade}/100")
+
+        # Add zinsser-ready label if grade reached 90+
+        if grade >= 90:
+            add_label_to_issue(existing_issue, "zinsser-ready")
+            print(f"Added zinsser-ready label to issue #{existing_issue}")
     else:
         # Create new issue
         create_grade_issue(filename, review)
