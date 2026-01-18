@@ -14,10 +14,6 @@ This mattered. It shaped how you looked at the world before you raised the camer
 
 Over time, color became dominant. But even as color took over most photographic use, black and white remained a deliberate option—something you chose at the moment you loaded the film.
 
-Monochrome-only digital cameras aren’t a quirky limitation—they restore black and white as a decision made before the shutter, not a look applied after.
-
-Leica proved it could sell; Ricoh may prove it can be normal.
-
 ## Digital photography collapses the choice
 
 Digital photography changed that relationship.
@@ -32,7 +28,7 @@ And so, for two decades, that became the default state of things. Digital photog
 
 ## Leica breaks the rule
 
-Against that default, Leica did something that ran against prevailing assumptions. In 2012, they introduced a digital camera designed to shoot only black and white.
+In 2012, Leica did something that ran against prevailing assumptions. They introduced a digital camera designed to shoot only black and white.
 
 The reaction was immediate, either enthusiastic or dismissive. Why spend that much money on a camera that cannot shoot color? Why remove a capability that every other digital camera offered? To many observers, it looked like a deliberate limitation.
 
@@ -46,9 +42,9 @@ That matters. If these cameras were not selling, Leica would have stopped making
 
 ## What a monochrome sensor really changes
 
-A monochrome sensor records only one thing: how much light each pixel receives. A color sensor also records light, but it does so through red, green, and blue filters, then reconstructs color from those separate samples.
+A monochrome sensor records only one thing: how much light each pixel receives. A color sensor does the same thing, except it measures light through red, green, and blue filters and reconstructs color from that information.
 
-Two technical consequences follow: resolution and sharpness. In a color sensor, each output pixel is reconstructed from red, green, and blue samples; in a monochrome sensor, every pixel records luminance. All else being equal, that usually means higher effective resolution. And because color sensors place a filter array in front of the sensor while monochrome sensors do not, there’s simply less between the light and the photosite—often translating into crisper edges.
+Two technical consequences follow. First, resolution. In a color sensor, each output pixel is reconstructed from red, green, and blue samples. In a monochrome sensor, every pixel records luminance. All else being equal, this produces higher effective resolution. Second, sharpness. Color sensors place a filter array in front of the sensor. Monochrome sensors do not. Less sits between the light and the photosite.
 
 These advantages are real, but secondary.
 
@@ -58,21 +54,9 @@ This is familiar to anyone who has shot black-and-white film. The decision remov
 
 For me, color is often a distraction. Once I start thinking about color relationships, composition weakens. There is too much information competing for attention. Black and white simplifies the problem. It makes framing more deliberate and seeing more precise.
 
-That shift isn’t just technical. It changes the kind of photographs you come home with.
-
-In street and documentary work, committing to monochrome tends to push you toward what survives without hue: gesture, light, shape, spacing, timing. You start paying attention to how a face turns through a patch of sun, how a white shirt blooms against a dark wall, how a shadow carves a scene in half. The camera’s constraint becomes a quiet set of marching orders.
-
-It also changes the edit. When black and white is decided at capture, you stop revisiting the same file as two different photographs—one in color, one in monochrome. That consistency can make a series feel more coherent, and it can make the process feel less like picking a look and more like following a way of seeing.
-
-One small example: I once framed a scene because of a bright jacket in the corner. In color, it felt like the anchor. In monochrome, it turned into a midtone, and the picture fell apart. I had to move, wait, and rebuild the frame around what actually carried in black and white: the direction of light, the edge of a shadow, and the spacing between people. The result was a different photograph, made by a different set of priorities.
-
-Of course, none of this requires a monochrome sensor. You can shoot color, convert later, and keep every option open—including sophisticated control over how different colors translate into gray.
-
-That flexibility is real, and for many photographers it’s the right answer. But it also keeps the decision downstream. A monochrome-only camera is valuable precisely because it refuses to let you postpone the question. You either commit to black and white, or you don’t bring the camera. The constraint is not for everyone, but when it fits, it changes how you look before you ever press the shutter.
-
 ## Why only Leica?
 
-If monochrome digital cameras are compelling, the obvious question follows: why has Leica been the only one making them?
+If monochrome digital cameras are compelling, the obvious question follows: why has Leica been the only one to make them?
 
 The interest exists. In photography forums, people ask why their preferred brand does not offer a black-and-white-only camera. This is especially visible in the Fujifilm community, and that is not accidental. Fuji’s X cameras emphasize physical controls and direct interaction. The X-Pro line even includes an optical viewfinder. Its audience values intention and constraint.
 
@@ -88,7 +72,7 @@ That difference explains why Leica could make monochrome digital cameras viable�
 
 ## Ricoh enters—and why it matters
 
-This is where the pattern breaks—and where the idea starts to look less like a brand quirk and more like a viable choice.
+This is where the pattern breaks.
 
 For years, Leica was the only company willing to build digital cameras with monochrome sensors. That made those cameras easy to dismiss as a Leica-specific anomaly: niche products for a niche audience, sustained by a unique brand and a unique customer base.
 
@@ -110,10 +94,10 @@ If it works, it won’t redefine photography. But it will remove the strongest r
 
 ## Something is shifting
 
-For a long time, black and white in digital photography has been treated as a byproduct rather than a primary constraint—something applied after the fact, once the image was already captured in color.
+For a long time, black and white in digital photography has been treated as a byproduct rather than a choice. Something decided after the fact, once the image was already captured in color.
 
-Monochrome cameras challenge that assumption. They lock the palette at capture and push the work upstream: into attention, framing, and timing. Black and white becomes a way of seeing again, not a treatment added in post.
+Monochrome cameras challenge that assumption. They reintroduce commitment. They force a decision before the shutter is pressed, not after. They restore black and white as a way of seeing, not a setting applied later.
 
-For the first time in decades, black and white at the moment of capture is no longer an afterthought.
+For the first time in decades, choosing black and white at the moment of capture is no longer an afterthought.
 
-It is the premise.
+It is a deliberate choice again.
