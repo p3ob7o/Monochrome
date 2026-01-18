@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Social media has changed how people talk to each other. It is very popular and many people use it every day. In this essay, I will discuss how social media affects communication.
+While social media has accelerated communication speed and expanded networks, it has fundamentally diminished the quality of human connection by prioritizing quantity over meaningful interection.. It is very popular and many people use it every day. In this essay, I will discuss how social media affects communication.
 
 ## Body Paragraph 1
 
