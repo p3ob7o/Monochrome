@@ -66,6 +66,10 @@ It also changes the edit. When black and white is decided at capture, you stop r
 
 One small example: I once framed a scene because of a bright jacket in the corner. In color, it felt like the anchor. In monochrome, it turned into a midtone, and the picture fell apart. I had to move, wait, and rebuild the frame around what actually carried in black and white: the direction of light, the edge of a shadow, and the spacing between people. The result was a different photograph, made by a different set of priorities.
 
+Of course, none of this requires a monochrome sensor. You can shoot color, convert later, and keep every option open—including sophisticated control over how different colors translate into gray.
+
+That flexibility is real, and for many photographers it’s the right answer. But it also keeps the decision downstream. A monochrome-only camera is valuable precisely because it refuses to let you postpone the question. You either commit to black and white, or you don’t bring the camera. The constraint is not for everyone, but when it fits, it changes how you look before you ever press the shutter.
+
 ## Why only Leica?
 
 If monochrome digital cameras are compelling, the obvious question follows: why has Leica been the only one making them?
