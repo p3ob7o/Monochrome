@@ -6,9 +6,9 @@ For the first 150 years, photography was made on film, and the film you used dic
 
 At the beginning, that film was black and white, because that was all there was. Color came later. Before taking a single photograph, you made a decision. You loaded a roll of film, and that decision defined the camera you were holding.
 
-If the film was black and white, your camera was a black-and-white camera.
+If the film were black-and-white, your camera would be a black-and-white camera.
 
-If the film was color, your camera was a color camera.
+If the film were color, your camera was a color camera.
 
 This mattered. It shaped how you looked at the world before you raised the camera to your eye. It determined what you paid attention to, what you ignored, and what you expected the image to become. Black and white and color were not effects applied later. They were distinct modes, chosen in advance, each with its own constraints and intentions.
 
@@ -18,9 +18,9 @@ Over time, color became dominant. But even as color took over most photographic 
 
 Digital photography changed that relationship.
 
-As soon as they left research labs, digital sensors were color sensors. That was not accidental. Digital photography arrived as a modern medium, and by then photography was overwhelmingly color. Black and white had moved to the margins: sometimes nostalgic, sometimes practical, sometimes archival, but no longer central.
+As soon as they left research labs, digital sensors were color sensors. That was not accidental. Digital photography arrived as a modern medium, and by then, photography was overwhelmingly color. Black and white had moved to the margins: sometimes nostalgic, sometimes practical, sometimes archival, but no longer central.
 
-Digital also introduced something film never had: flexibility after the fact. You could take a color photograph and remove the color later. Instantly. Without changing how you shot, or how you saw the scene.
+Digital also introduced something film never had: flexibility after the fact. You could take a color photograph and remove the color later. Instantly. Without changing how you shot or how you saw the scene.
 
 For the first time, black and white no longer required commitment. It became a reversible decision, made in software, downstream from the act of photographing itself.
 
@@ -30,21 +30,21 @@ Monochrome-only digital cameras aren’t a quirky limitation—they restore phot
 
 ## Leica breaks the rule
 
-Against that default, Leica did something that ran against prevailing assumptions. In 2012 they introduced a digital camera designed to shoot only black and white.
+Against that default, Leica did something that ran against prevailing assumptions. In 2012, they introduced a digital camera designed to shoot only black and white.
 
-The reaction was immediate, either enthusiastic or dismissive. Why spend that much money on a camera that could not shoot color? Why remove a capability that every other digital camera offered? To many observers, it looked like a deliberate limitation.
+The reaction was immediate, either enthusiastic or dismissive. Why spend that much money on a camera that cannot shoot color? Why remove a capability that every other digital camera offered? To many observers, it looked like a deliberate limitation.
 
 Leica did not treat it as a one-off experiment. They kept going.
 
-Over the years, they released the M9 Monochrom, the Typ 246, the M10 Monochrom, and the M11 Monochrom. In the Q line, they skipped the original Q but later introduced the Q2 and Q3 in monochrome versions. These are not special editions or curiosities. They are full products, refined over multiple generations.
+Over the years, they released the M9 Monochrom, Typ 246, M10 Monochrom, and M11 Monochrom. In the Q line, they skipped the original Q but later introduced the Q2 and Q3 in monochrome versions. These are not special editions or curiosities. They are full products, refined over multiple generations.
 
-They are also priced exactly where Leica cameras are always priced. Expensive, yes, but not meaningfully more expensive than their color equivalents.
+They are also priced exactly as Leica cameras are. Expensive, yes, but not meaningfully more expensive than their color equivalents.
 
 That matters. If these cameras were not selling, Leica would have stopped making them. They didn’t.
 
 ## What a monochrome sensor really changes
 
-A monochrome sensor records only one thing: how much light hits each pixel. A color sensor does the same thing, except it measures light through red, green, and blue filters and reconstructs color from that information.
+A monochrome sensor records only one thing: how much light each pixel receives. A color sensor does the same thing, except it measures light through red, green, and blue filters and reconstructs color from that information.
 
 Two technical consequences follow. First, resolution. In a color sensor, each output pixel is reconstructed from red, green, and blue samples. In a monochrome sensor, every pixel records luminance. All else being equal, this produces higher effective resolution. Second, sharpness. Color sensors place a filter array in front of the sensor. Monochrome sensors do not. Less sits between the light and the photosite.
 
@@ -58,7 +58,7 @@ For me, color is often a distraction. Once I start thinking about color relation
 
 ## Why only Leica?
 
-If monochrome digital cameras are compelling, the obvious question follows: why has Leica been alone in making them?
+If monochrome digital cameras are compelling, the obvious question follows: why has Leica been the only one making them?
 
 The interest exists. In photography forums, people ask why their preferred brand does not offer a black-and-white-only camera. This is especially visible in the Fujifilm community, and that is not accidental. Fuji’s X cameras emphasize physical controls and direct interaction. The X-Pro line even includes an optical viewfinder. Its audience values intention and constraint.
 
@@ -88,7 +88,7 @@ Ricoh’s announcement of the GR IV Monochrome is therefore significant.
 
 It confirms something Leica has shown for years: a true monochrome camera is more expensive to build. The GR IV sells for €1,399. The GR IV Monochrome comes in at €1,799. The difference is real, but it is not extreme. It reflects the cost of a different sensor and a dedicated image processing chain, not a repositioning of the product.
 
-What matters is that Ricoh shows this increase can be sustainable. The camera remains within reach of its intended audience, and the price stays coherent with the rest of the line. Monochrome, here, is not treated as a luxury indulgence, but as a viable variation of an existing tool.
+What matters is that Ricoh shows this increase can be sustainable. The camera remains within reach of its intended audience, and the price remains in line with the rest of the line. Monochrome, here, is not treated as a luxury indulgence, but as a viable variation of an existing tool.
 
 That makes the GR IV Monochrome something Leica’s cameras never quite were: a practical test, not a brand statement.
 
@@ -96,7 +96,7 @@ If it works, it won’t redefine photography. But it will remove the strongest r
 
 ## Something is shifting
 
-For a long time, black and white in digital photography has been treated as a byproduct, not a choice. Something decided after the fact, once the image was already captured in color.
+For a long time, black and white in digital photography has been treated as a byproduct rather than a choice. Something decided after the fact, once the image was already captured in color.
 
 Monochrome cameras challenge that assumption. They reintroduce commitment. They force a decision before the shutter is pressed, not after. They restore black and white as a way of seeing, not a setting applied later.
 
