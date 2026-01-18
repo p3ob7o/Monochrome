@@ -36,9 +36,11 @@ Leica did not treat it as a one-off experiment. They kept going.
 
 Over the years, they released the M9 Monochrom, Typ 246, M10 Monochrom, and M11 Monochrom. In the Q line, they skipped the original Q but later introduced the Q2 and Q3 in monochrome versions. These are not special editions or curiosities. They are full products, refined over multiple generations.
 
-They are also priced exactly as Leica cameras are. Expensive, yes, but not meaningfully more expensive than their color equivalents.
+They are also priced exactly like Leica cameras. Expensive, yes, but not meaningfully more expensive than their color equivalents.
 
-That matters. If these cameras were not selling, Leica would have stopped making them. They didn’t.
+That matters. If these cameras were not selling, Leica would have stopped making them. They didn’t. While Leica doesn’t break revenue down by product line, it included in the [press release](https://leica-camera.com/de-AT/press/leica-camera-group-increased-its-sale-revenues-third-time-succession) announcing a record 2024 revenue that:
+
+> The road to success that brought the record results will be consistently followed in the current financial year (1 April 2023 to 31 March 2024). Alongside the Leica M11 Monochrom (with a black-and-white camera sensor), the Leica M11-P stands as a world’s first and a further milestone in the Leica M-System, which has been the flagship of the company since 1954 and will be celebrating its 70th anniversary in 2024.
 
 ## What a monochrome sensor really changes
 
