@@ -1,5 +1,7 @@
 # A Black & White Renaissance
 
+Launching a monochrome digital camera could have seemed irrational, as long as it was only a Leica eccentricity, but when, after seven models coming out of Wetzlar, Ricoh follows suit with the GR IV Monochrome, one has to admit there is a real market for it.
+
 ## When the camera was the film
 
 For the first 150 years, photography was made on film, and the film you used dictated whether your camera was a color or a black-and-white camera.
