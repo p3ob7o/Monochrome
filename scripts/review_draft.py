@@ -26,26 +26,26 @@ Grade on a 0-100 scale using these criteria:
 - Language, style, and mechanics (20 points)
 
 Return your response as JSON with this exact structure:
-{
+{{
     "grade": <number 0-100>,
     "summary": "<2-3 sentence overall assessment>",
-    "breakdown": {
-        "thesis": {"score": <0-20>, "comment": "<brief comment>"},
-        "organization": {"score": <0-20>, "comment": "<brief comment>"},
-        "evidence": {"score": <0-20>, "comment": "<brief comment>"},
-        "analysis": {"score": <0-20>, "comment": "<brief comment>"},
-        "language": {"score": <0-20>, "comment": "<brief comment>"}
-    },
+    "breakdown": {{
+        "thesis": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "organization": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "evidence": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "analysis": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "language": {{"score": <0-20>, "comment": "<brief comment>"}}
+    }},
     "feedback": [
-        {
+        {{
             "title": "<brief 5-10 word description>",
             "category": "<thesis|organization|evidence|analysis|language>",
             "issue": "<specific problem identified>",
             "suggestion": "<actionable improvement recommendation>",
             "example": "<optional: example from the text or suggested revision>"
-        }
+        }}
     ]
-}
+}}
 
 Provide 3-5 feedback items, each focused on a single, specific, actionable improvement.
 Be constructive but honest. If the writing is strong, focus on refinements rather than major issues.
