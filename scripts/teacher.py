@@ -117,15 +117,127 @@ def ensure_labels_exist(labels: list[str]) -> None:
         )
 
 
-def create_grade_issue(filename: str, review: dict) -> None:
-    """Create the grade issue with overall assessment."""
+def find_existing_grade_issue(filename: str) -> int | None:
+    """Find existing grade issue for a file by labels."""
+    result = subprocess.run(
+        [
+            "gh", "issue", "list",
+            "--label", "teacher",
+            "--label", "grade",
+            "--label", filename,
+            "--state", "open",
+            "--json", "number",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return None
+
+    issues = json.loads(result.stdout)
+    if issues:
+        return issues[0]["number"]
+    return None
+
+
+def find_existing_feedback_issues(filename: str) -> list[dict]:
+    """Find existing feedback issues for a file."""
+    result = subprocess.run(
+        [
+            "gh", "issue", "list",
+            "--label", "teacher",
+            "--label", "feedback",
+            "--label", filename,
+            "--state", "open",
+            "--json", "number,title,body",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return []
+
+    return json.loads(result.stdout)
+
+
+def update_issue_title(issue_number: int, new_title: str) -> None:
+    """Update an issue's title."""
+    subprocess.run(
+        ["gh", "issue", "edit", str(issue_number), "--title", new_title],
+        check=True,
+    )
+
+
+def add_comment_to_issue(issue_number: int, body: str) -> None:
+    """Add a comment to an existing issue."""
+    subprocess.run(
+        ["gh", "issue", "comment", str(issue_number), "--body", body],
+        check=True,
+    )
+
+
+COMPARE_FEEDBACK_PROMPT = """Given a new feedback item and a list of existing feedback issues, determine:
+1. Is this feedback essentially the same as an existing issue? → "duplicate"
+2. Is this feedback related to (but different from) an existing issue? → "related" + issue number
+3. Is this feedback entirely new? → "new"
+
+New feedback:
+- Title: {title}
+- Category: {category}
+- Issue: {issue}
+- Suggestion: {suggestion}
+
+Existing issues:
+{existing_issues}
+
+Respond with ONLY JSON, no other text: {{"action": "duplicate" | "related" | "new", "related_issue": <number or null>}}"""
+
+
+def compare_feedback(
+    new_feedback: dict, existing_issues: list[dict]
+) -> tuple[str, int | None]:
+    """Use Claude to compare new feedback against existing issues."""
+    # Format existing issues for the prompt
+    existing_str = ""
+    for issue in existing_issues:
+        existing_str += f"\n- Issue #{issue['number']}: {issue['title']}\n  Body: {issue['body'][:500]}...\n"
+
+    client = anthropic.Anthropic()
+    message = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=200,
+        messages=[
+            {
+                "role": "user",
+                "content": COMPARE_FEEDBACK_PROMPT.format(
+                    title=new_feedback["title"],
+                    category=new_feedback["category"],
+                    issue=new_feedback["issue"],
+                    suggestion=new_feedback["suggestion"],
+                    existing_issues=existing_str,
+                ),
+            }
+        ],
+    )
+
+    response_text = message.content[0].text
+
+    try:
+        result = json.loads(response_text)
+        return (result["action"], result.get("related_issue"))
+    except (json.JSONDecodeError, KeyError):
+        # Default to "new" if we can't parse the response
+        print(f"Warning: Could not parse comparison response, treating as new")
+        return ("new", None)
+
+
+def format_grade_body(review: dict) -> str:
+    """Format the grade issue body."""
     grade = review["grade"]
     summary = review["summary"]
     breakdown = review["breakdown"]
 
-    title = f"[Teacher] {filename}: {grade}/100"
-
-    body = f"""## Grade: {grade}/100
+    return f"""## Grade: {grade}/100
 
 ### Summary
 {summary}
@@ -141,18 +253,41 @@ def create_grade_issue(filename: str, review: dict) -> None:
 | Language | {breakdown['language']['score']}/20 | {breakdown['language']['comment']} |
 """
 
+
+def create_grade_issue(filename: str, review: dict) -> None:
+    """Create a new grade issue."""
+    grade = review["grade"]
+    title = f"[Teacher] {filename}: {grade}/100"
+    body = format_grade_body(review)
+
     labels = ["teacher", "grade", filename]
     ensure_labels_exist(labels)
     create_issue(title, body, labels)
     print(f"Created grade issue: {title}")
 
 
-def create_feedback_issues(filename: str, review: dict) -> None:
-    """Create individual feedback issues for each improvement point."""
-    for item in review["feedback"]:
-        title = f"[Teacher] {filename}: {item['title']}"
+def handle_grade_issue(filename: str, review: dict) -> None:
+    """Handle grade issue - update existing or create new."""
+    existing_issue = find_existing_grade_issue(filename)
+    grade = review["grade"]
 
-        body = f"""## Category: {item['category'].title()}
+    if existing_issue:
+        # Update existing issue
+        new_title = f"[Teacher] {filename}: {grade}/100"
+        body = format_grade_body(review)
+        comment_body = f"## Re-review\n\n{body}"
+
+        update_issue_title(existing_issue, new_title)
+        add_comment_to_issue(existing_issue, comment_body)
+        print(f"Updated grade issue #{existing_issue} with new grade: {grade}/100")
+    else:
+        # Create new issue
+        create_grade_issue(filename, review)
+
+
+def format_feedback_body(item: dict) -> str:
+    """Format the feedback issue body."""
+    body = f"""## Category: {item['category'].title()}
 
 ### Issue
 {item['issue']}
@@ -160,16 +295,45 @@ def create_feedback_issues(filename: str, review: dict) -> None:
 ### Suggestion
 {item['suggestion']}
 """
-        if item.get("example"):
-            body += f"""
+    if item.get("example"):
+        body += f"""
 ### Example
 {item['example']}
 """
+    return body
 
-        labels = ["teacher", "feedback", filename, item["category"]]
-        ensure_labels_exist(labels)
-        create_issue(title, body, labels)
-        print(f"Created feedback issue: {title}")
+
+def create_feedback_issue(filename: str, item: dict) -> None:
+    """Create a single feedback issue."""
+    title = f"[Teacher] {filename}: {item['title']}"
+    body = format_feedback_body(item)
+
+    labels = ["teacher", "feedback", filename, item["category"]]
+    ensure_labels_exist(labels)
+    create_issue(title, body, labels)
+    print(f"Created feedback issue: {title}")
+
+
+def handle_feedback_issues(filename: str, review: dict) -> None:
+    """Handle feedback issues - deduplicate against existing issues."""
+    existing_issues = find_existing_feedback_issues(filename)
+
+    for item in review["feedback"]:
+        if existing_issues:
+            action, related_issue = compare_feedback(item, existing_issues)
+
+            if action == "duplicate":
+                print(f"Skipping duplicate feedback: {item['title']}")
+                continue
+            elif action == "related" and related_issue:
+                # Add as comment to related issue
+                comment_body = f"## Additional Feedback\n\n{format_feedback_body(item)}"
+                add_comment_to_issue(related_issue, comment_body)
+                print(f"Added comment to issue #{related_issue}: {item['title']}")
+                continue
+
+        # New feedback - create issue
+        create_feedback_issue(filename, item)
 
 
 def main():
@@ -193,15 +357,15 @@ def main():
     grade = review["grade"]
     print(f"Grade received: {grade}/100")
 
-    # Always create grade issue
-    create_grade_issue(filename, review)
+    # Handle grade issue (update existing or create new)
+    handle_grade_issue(filename, review)
 
-    # Create feedback issues only if grade < 85
+    # Handle feedback issues only if grade < 85
     if grade < 85:
-        print(f"Grade below 85, creating {len(review['feedback'])} feedback issues...")
-        create_feedback_issues(filename, review)
+        print(f"Grade below 85, processing {len(review['feedback'])} feedback items...")
+        handle_feedback_issues(filename, review)
     else:
-        print("Grade 85 or above, skipping individual feedback issues.")
+        print("Grade 85 or above, skipping feedback issues.")
 
     print("Review complete!")
 
