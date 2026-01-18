@@ -26,9 +26,11 @@ For the first time, black and white no longer required commitment. It became a r
 
 And so, for two decades, that became the default state of things. Digital photography was color by design. Black and white survived as an interpretation of a color file, not as a way of seeing chosen in advance.
 
+Monochrome-only digital cameras aren’t a quirky limitation—they restore photography as a deliberate choice made before the shutter, not a look applied after. Leica proved the idea; Ricoh’s GR IV Monochrome suggests that kind of commitment is becoming practical again.
+
 ## Leica breaks the rule
 
-In 2012, Leica did something that ran against prevailing assumptions. They introduced a digital camera designed to shoot only black and white.
+Against that default, Leica did something that ran against prevailing assumptions. In 2012 they introduced a digital camera designed to shoot only black and white.
 
 The reaction was immediate, either enthusiastic or dismissive. Why spend that much money on a camera that could not shoot color? Why remove a capability that every other digital camera offered? To many observers, it looked like a deliberate limitation.
 
@@ -72,7 +74,7 @@ That difference explains why Leica could make monochrome digital cameras viable�
 
 ## Ricoh enters—and why it matters
 
-This is where the pattern breaks.
+This is where the pattern breaks—and where the idea starts to look less like a brand quirk and more like a viable choice.
 
 For years, Leica was the only company willing to build digital cameras with monochrome sensors. That made those cameras easy to dismiss as a Leica-specific anomaly: niche products for a niche audience, sustained by a unique brand and a unique customer base.
 
