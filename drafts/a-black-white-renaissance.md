@@ -110,10 +110,10 @@ If it works, it won’t redefine photography. But it will remove the strongest r
 
 ## Something is shifting
 
-For a long time, black and white in digital photography has been treated as a byproduct rather than a choice. Something decided after the fact, once the image was already captured in color.
+For a long time, black and white in digital photography has been treated as a byproduct rather than a primary constraint—something applied after the fact, once the image was already captured in color.
 
-Monochrome cameras challenge that assumption. They reintroduce commitment. They force a decision before the shutter is pressed, not after. They restore black and white as a way of seeing, not a setting applied later.
+Monochrome cameras challenge that assumption. They lock the palette at capture and push the work upstream: into attention, framing, and timing. Black and white becomes a way of seeing again, not a treatment added in post.
 
-For the first time in decades, choosing black and white at the moment of capture is no longer an afterthought.
+For the first time in decades, black and white at the moment of capture is no longer an afterthought.
 
-It is a deliberate choice again.
+It is the premise.
