@@ -64,6 +64,8 @@ In street and documentary work, committing to monochrome tends to push you towar
 
 It also changes the edit. When black and white is decided at capture, you stop revisiting the same file as two different photographs—one in color, one in monochrome. That consistency can make a series feel more coherent, and it can make the process feel less like picking a look and more like following a way of seeing.
 
+One small example: I once framed a scene because of a bright jacket in the corner. In color, it felt like the anchor. In monochrome, it turned into a midtone, and the picture fell apart. I had to move, wait, and rebuild the frame around what actually carried in black and white: the direction of light, the edge of a shadow, and the spacing between people. The result was a different photograph, made by a different set of priorities.
+
 ## Why only Leica?
 
 If monochrome digital cameras are compelling, the obvious question follows: why has Leica been the only one making them?
