@@ -58,6 +58,12 @@ This is familiar to anyone who has shot black-and-white film. The decision remov
 
 For me, color is often a distraction. Once I start thinking about color relationships, composition weakens. There is too much information competing for attention. Black and white simplifies the problem. It makes framing more deliberate and seeing more precise.
 
+That shift isn’t just technical. It changes the kind of photographs you come home with.
+
+In street and documentary work, committing to monochrome tends to push you toward what survives without hue: gesture, light, shape, spacing, timing. You start paying attention to how a face turns through a patch of sun, how a white shirt blooms against a dark wall, how a shadow carves a scene in half. The camera’s constraint becomes a quiet set of marching orders.
+
+It also changes the edit. When black and white is decided at capture, you stop revisiting the same file as two different photographs—one in color, one in monochrome. That consistency can make a series feel more coherent, and it can make the process feel less like picking a look and more like following a way of seeing.
+
 ## Why only Leica?
 
 If monochrome digital cameras are compelling, the obvious question follows: why has Leica been the only one making them?
