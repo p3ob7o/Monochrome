@@ -1,6 +1,6 @@
 # The Impact of Social Media on Modern Communication
 
-*Draft v2*
+*Draft v3*
 
 ## Introduction
 

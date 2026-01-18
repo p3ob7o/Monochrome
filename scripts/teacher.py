@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Draft Review Agent
+Teacher Agent
 
 Reviews markdown drafts as an AP English teacher and creates GitHub issues
 for grades and feedback.
@@ -123,7 +123,7 @@ def create_grade_issue(filename: str, review: dict) -> None:
     summary = review["summary"]
     breakdown = review["breakdown"]
 
-    title = f"[Grade] {filename}: {grade}/100"
+    title = f"[Teacher] {filename}: {grade}/100"
 
     body = f"""## Grade: {grade}/100
 
@@ -141,7 +141,7 @@ def create_grade_issue(filename: str, review: dict) -> None:
 | Language | {breakdown['language']['score']}/20 | {breakdown['language']['comment']} |
 """
 
-    labels = ["grade", filename]
+    labels = ["teacher", "grade", filename]
     ensure_labels_exist(labels)
     create_issue(title, body, labels)
     print(f"Created grade issue: {title}")
@@ -150,7 +150,7 @@ def create_grade_issue(filename: str, review: dict) -> None:
 def create_feedback_issues(filename: str, review: dict) -> None:
     """Create individual feedback issues for each improvement point."""
     for item in review["feedback"]:
-        title = f"[Feedback] {filename}: {item['title']}"
+        title = f"[Teacher] {filename}: {item['title']}"
 
         body = f"""## Category: {item['category'].title()}
 
@@ -166,7 +166,7 @@ def create_feedback_issues(filename: str, review: dict) -> None:
 {item['example']}
 """
 
-        labels = ["feedback", filename, item["category"]]
+        labels = ["teacher", "feedback", filename, item["category"]]
         ensure_labels_exist(labels)
         create_issue(title, body, labels)
         print(f"Created feedback issue: {title}")
@@ -174,7 +174,7 @@ def create_feedback_issues(filename: str, review: dict) -> None:
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python review_draft.py <path-to-draft.md>")
+        print("Usage: python teacher.py <path-to-draft.md>")
         sys.exit(1)
 
     filepath = sys.argv[1]
