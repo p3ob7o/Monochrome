@@ -1,5 +1,7 @@
 # The Impact of Social Media on Modern Communication
 
+*Draft v1*
+
 ## Introduction
 
 Social media has changed how people talk to each other. It is very popular and many people use it every day. In this essay, I will discuss how social media affects communication.

@@ -23,7 +23,8 @@ jobs:
       - name: Get changed markdown files
         id: changed-files
         run: |
-          changed=$(git diff --name-only HEAD~1 HEAD -- 'drafts/**/*.md' || echo "")
+          # Get all changed files and filter for markdown in drafts/
+          changed=$(git diff --name-only HEAD~1 HEAD | grep '^drafts/.*\.md$' || echo "")
           if [ -z "$changed" ]; then
             echo "No markdown files changed in drafts/"
             echo "files=" >> $GITHUB_OUTPUT
