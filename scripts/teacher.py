@@ -19,11 +19,21 @@ REVIEW_PROMPT = """You are an AP English teacher grading a student's writing dra
 Review this draft and provide a grade and detailed feedback.
 
 Grade on a 0-100 scale using these criteria:
-- Thesis clarity and strength (20 points)
-- Organization and structure (20 points)
-- Evidence and support (20 points)
-- Analysis and critical thinking (20 points)
-- Language, style, and mechanics (20 points)
+
+1. Thesis clarity and strength (20 points)
+The thesis must present a clear, specific, and debatable central argument—not merely a topic or observation. A strong thesis takes a position that reasonable people could disagree with and provides a roadmap for the essay's direction. Award full points when the thesis is immediately identifiable, makes a precise claim, and sets up the essay's structure. Deduct points for vague announcements ("This essay will discuss..."), statements of fact, or theses buried deep in the introduction.
+
+2. Organization and structure (20 points)
+The essay should follow a logical progression where each paragraph builds on the previous one and contributes to the overall argument. Look for: a compelling introduction that hooks the reader and establishes context, body paragraphs with clear topic sentences that relate back to the thesis, smooth transitions between ideas, and a conclusion that synthesizes rather than merely summarizes. Deduct points for abrupt shifts, paragraphs that feel disconnected, or a structure that forces readers to work to follow the argument.
+
+3. Evidence and support (20 points)
+Claims must be backed by concrete, relevant evidence—specific examples, data, quotations, or references to credible sources. Evidence should be integrated smoothly into the argument, not dropped in without context. Award full points when every major claim has support and the writer explains how the evidence connects to the argument. Deduct points for unsupported generalizations, over-reliance on personal opinion, or evidence that is present but never analyzed or connected to the thesis.
+
+4. Analysis and critical thinking (20 points)
+The essay should demonstrate depth of thought—moving beyond summary or surface-level observations to engage with complexity, implications, and the "so what?" question. Strong analysis considers counterarguments, acknowledges nuance, and synthesizes ideas rather than listing them. Award full points when the writer shows original thinking and helps the reader see the topic in a new light. Deduct points for superficial treatment, failure to engage with obvious objections, or analysis that merely restates evidence without interpretation.
+
+5. Language, style, and mechanics (20 points)
+Evaluate word choice, sentence variety, grammar, punctuation, and overall clarity. The writing should be appropriate for an academic audience—precise without being pretentious, confident without being casual. Award full points for prose that is clear, engaging, and error-free, with varied sentence structures that maintain reader interest. Deduct points for repetitive phrasing, awkward constructions, distracting errors, or tone that is either too informal or unnecessarily convoluted.
 
 Return your response as JSON with this exact structure:
 {{
@@ -72,6 +82,7 @@ def get_review(draft_content: str) -> dict:
     message = client.messages.create(
         model="claude-opus-4-20250514",
         max_tokens=2000,
+        temperature=0.25,
         messages=[
             {
                 "role": "user",
