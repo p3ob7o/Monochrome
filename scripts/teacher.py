@@ -360,12 +360,12 @@ def main():
     # Handle grade issue (update existing or create new)
     handle_grade_issue(filename, review)
 
-    # Handle feedback issues only if grade < 85
-    if grade < 85:
-        print(f"Grade below 85, processing {len(review['feedback'])} feedback items...")
+    # Handle feedback issues only if grade < 90
+    if grade < 90:
+        print(f"Grade below 90, processing {len(review['feedback'])} feedback items...")
         handle_feedback_issues(filename, review)
     else:
-        print("Grade 85 or above, skipping feedback issues.")
+        print("Grade 90 or above, skipping feedback issues.")
 
     print("Review complete!")
 
