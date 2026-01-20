@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 - `drafts/` holds the only files we edit: long-form Markdown drafts for Monochrome.blog.
-- `scripts/` contains Python agents that review drafts and open GitHub issues (e.g., `teacher.py`, `zinsser.py`).
+- `scripts/` contains Python agents that review drafts and open GitHub issues (e.g., `editor.py`, `zinsser.py`).
 - `assets/` stores reusable visual assets (logos, QR SVGs/PNGs).
 - `prints/` contains production-ready print assets (PDF/EPS/TIFF/Keynote).
 

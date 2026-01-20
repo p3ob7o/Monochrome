@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Teacher Agent
+Editor Agent
 
-Reviews markdown drafts as an AP English teacher and creates GitHub issues
+Reviews blog post drafts from an editorial perspective and creates GitHub issues
 for grades and feedback.
 """
 
@@ -15,41 +15,47 @@ from pathlib import Path
 import anthropic
 
 
-REVIEW_PROMPT = """You are an AP English teacher grading a student's writing draft.
+REVIEW_PROMPT = """You are an editorial reviewer grading a blog post draft.
 Review this draft and provide a grade and detailed feedback.
 
 Grade on a 0-100 scale using these criteria:
 
-1. Thesis clarity and strength (20 points)
-The thesis must present a clear, specific, and debatable central argument—not merely a topic or observation. A strong thesis takes a position that reasonable people could disagree with and provides a roadmap for the essay's direction. Award full points when the thesis is immediately identifiable, makes a precise claim, and sets up the essay's structure. Deduct points for vague announcements ("This essay will discuss..."), statements of fact, or theses buried deep in the introduction.
+1. Hook and Reader Value (20 points)
+The opening must earn the reader's attention immediately—no preamble, no throat-clearing. Within the first few sentences, the reader should understand what the post is about and why it matters to them. A strong hook creates curiosity or stakes without resorting to clickbait. Award full points when the opening is sharp, the promise is clear, and the post delivers on that promise by the end. Deduct points for slow starts, buried ledes, vague introductions ("In today's world..."), or posts that fail to answer the implicit question: "Why should I keep reading?"
 
-2. Organization and structure (20 points)
-The essay should follow a logical progression where each paragraph builds on the previous one and contributes to the overall argument. Look for: a compelling introduction that hooks the reader and establishes context, body paragraphs with clear topic sentences that relate back to the thesis, smooth transitions between ideas, and a conclusion that synthesizes rather than merely summarizes. Deduct points for abrupt shifts, paragraphs that feel disconnected, or a structure that forces readers to work to follow the argument.
+2. Central Insight (20 points)
+The post must have something to say—a clear point, argument, or idea that justifies its existence. This isn't an academic thesis but a perspective the reader couldn't have articulated themselves before reading. Strong insights are specific, debatable, and stick with the reader afterward. Award full points when the central idea is immediately identifiable, offers genuine value, and feels earned rather than obvious. Deduct points for posts that meander without a point, state the obvious, or bury the insight so deep it gets lost.
 
-3. Evidence and support (20 points)
-Claims must be backed by concrete, relevant evidence—specific examples, data, quotations, or references to credible sources. Evidence should be integrated smoothly into the argument, not dropped in without context. Award full points when every major claim has support and the writer explains how the evidence connects to the argument. Deduct points for unsupported generalizations, over-reliance on personal opinion, or evidence that is present but never analyzed or connected to the thesis.
+3. Structure, Flow, and Mechanics (20 points)
+The post should be organized for how people actually read online: scannable, with clear progression and logical flow between ideas. Paragraphs should be short. Transitions should feel natural, not forced. Grammar, punctuation, and sentence construction must be clean—errors distract and undermine credibility. Award full points when the structure serves the content, the pacing keeps the reader moving, and the mechanics are invisible (i.e., nothing pulls the reader out of the piece). Deduct points for walls of text, abrupt jumps between ideas, unclear antecedents, or errors that a careful edit would have caught.
 
-4. Analysis and critical thinking (20 points)
-The essay should demonstrate depth of thought—moving beyond summary or surface-level observations to engage with complexity, implications, and the "so what?" question. Strong analysis considers counterarguments, acknowledges nuance, and synthesizes ideas rather than listing them. Award full points when the writer shows original thinking and helps the reader see the topic in a new light. Deduct points for superficial treatment, failure to engage with obvious objections, or analysis that merely restates evidence without interpretation.
+4. Support and Credibility (20 points)
+Claims need backing—but this isn't academia. Support can come from personal experience, concrete examples, data, or references to credible sources. Anecdotes and anecdata are valid forms of support, as long as they're clearly framed as such ("In my experience," "I've found that")—honesty about the limits of evidence builds credibility rather than undermining it. What matters is that assertions don't float unsupported. The writer should establish authority naturally: through demonstrated knowledge, specificity, or honest acknowledgment of limitations. Award full points when every significant claim has appropriate support and the reader trusts the writer's perspective. Deduct points for unsupported generalizations, anecdotes dressed up as universal truths, vague appeals to consensus ("everyone knows..."), or overreach that undermines credibility.
 
-5. Language, style, and mechanics (20 points)
-Evaluate word choice, sentence variety, grammar, punctuation, and overall clarity. The writing should be appropriate for an academic audience—precise without being pretentious, confident without being casual. Award full points for prose that is clear, engaging, and error-free, with varied sentence structures that maintain reader interest. Deduct points for repetitive phrasing, awkward constructions, distracting errors, or tone that is either too informal or unnecessarily convoluted.
+5. Voice and Readability (20 points)
+The writing must sound like Paolo—direct, confident, and efficient. Sentences should be short and declarative. Personal experience should serve the insight, not the ego. Humor, when present, should be dry and understated. The tone should respect the reader's intelligence without showing off. Award full points when the prose is crisp, the voice is distinctive, and the piece is genuinely pleasurable to read. Deduct points for:
+- Hedging language ("I think," "perhaps," "it seems," "might")
+- Inspirational or preachy tone
+- Unnecessary jargon or complexity
+- Padding, repetition, or filler
+- Emotional appeals over reasoned argument
+- Throat-clearing or excessive setup before getting to the point
 
 Return your response as JSON with this exact structure:
 {{
     "grade": <number 0-100>,
     "summary": "<2-3 sentence overall assessment>",
     "breakdown": {{
-        "thesis": {{"score": <0-20>, "comment": "<brief comment>"}},
-        "organization": {{"score": <0-20>, "comment": "<brief comment>"}},
-        "evidence": {{"score": <0-20>, "comment": "<brief comment>"}},
-        "analysis": {{"score": <0-20>, "comment": "<brief comment>"}},
-        "language": {{"score": <0-20>, "comment": "<brief comment>"}}
+        "hook": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "insight": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "structure": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "support": {{"score": <0-20>, "comment": "<brief comment>"}},
+        "voice": {{"score": <0-20>, "comment": "<brief comment>"}}
     }},
     "feedback": [
         {{
             "title": "<brief 5-10 word description>",
-            "category": "<thesis|organization|evidence|analysis|language>",
+            "category": "<hook|insight|structure|support|voice>",
             "issue": "<specific problem identified>",
             "suggestion": "<actionable improvement recommendation>",
             "example": "<optional: example from the text or suggested revision>"
@@ -133,7 +139,7 @@ def find_existing_grade_issue(filename: str) -> int | None:
     result = subprocess.run(
         [
             "gh", "issue", "list",
-            "--label", "teacher",
+            "--label", "editor",
             "--label", "grade",
             "--label", filename,
             "--state", "open",
@@ -156,7 +162,7 @@ def find_existing_feedback_issues(filename: str) -> list[dict]:
     result = subprocess.run(
         [
             "gh", "issue", "list",
-            "--label", "teacher",
+            "--label", "editor",
             "--label", "feedback",
             "--label", filename,
             "--state", "open",
@@ -266,21 +272,21 @@ def format_grade_body(review: dict) -> str:
 
 | Category | Score | Comment |
 |----------|-------|---------|
-| Thesis | {breakdown['thesis']['score']}/20 | {breakdown['thesis']['comment']} |
-| Organization | {breakdown['organization']['score']}/20 | {breakdown['organization']['comment']} |
-| Evidence | {breakdown['evidence']['score']}/20 | {breakdown['evidence']['comment']} |
-| Analysis | {breakdown['analysis']['score']}/20 | {breakdown['analysis']['comment']} |
-| Language | {breakdown['language']['score']}/20 | {breakdown['language']['comment']} |
+| Hook | {breakdown['hook']['score']}/20 | {breakdown['hook']['comment']} |
+| Insight | {breakdown['insight']['score']}/20 | {breakdown['insight']['comment']} |
+| Structure | {breakdown['structure']['score']}/20 | {breakdown['structure']['comment']} |
+| Support | {breakdown['support']['score']}/20 | {breakdown['support']['comment']} |
+| Voice | {breakdown['voice']['score']}/20 | {breakdown['voice']['comment']} |
 """
 
 
 def create_grade_issue(filename: str, review: dict) -> None:
     """Create a new grade issue."""
     grade = review["grade"]
-    title = f"[Teacher] {filename}: {grade}/100"
+    title = f"[Editor] {filename}: {grade}/100"
     body = format_grade_body(review)
 
-    labels = ["teacher", "grade", filename]
+    labels = ["editor", "grade", filename]
     if grade >= 80:
         labels.append("zinsser-ready")
     ensure_labels_exist(labels)
@@ -295,7 +301,7 @@ def handle_grade_issue(filename: str, review: dict) -> None:
 
     if existing_issue:
         # Update existing issue
-        new_title = f"[Teacher] {filename}: {grade}/100"
+        new_title = f"[Editor] {filename}: {grade}/100"
         body = format_grade_body(review)
         comment_body = f"## Re-review\n\n{body}"
 
@@ -332,10 +338,10 @@ def format_feedback_body(item: dict) -> str:
 
 def create_feedback_issue(filename: str, item: dict) -> None:
     """Create a single feedback issue."""
-    title = f"[Teacher] {filename}: {item['title']}"
+    title = f"[Editor] {filename}: {item['title']}"
     body = format_feedback_body(item)
 
-    labels = ["teacher", "feedback", filename, item["category"]]
+    labels = ["editor", "feedback", filename, item["category"]]
     ensure_labels_exist(labels)
     create_issue(title, body, labels)
     print(f"Created feedback issue: {title}")
@@ -365,7 +371,7 @@ def handle_feedback_issues(filename: str, review: dict) -> None:
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python teacher.py <path-to-draft.md>")
+        print("Usage: python editor.py <path-to-draft.md>")
         sys.exit(1)
 
     filepath = sys.argv[1]

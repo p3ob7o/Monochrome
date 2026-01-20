@@ -1,4 +1,4 @@
-name: Teacher
+name: Editor
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - 'drafts/**/*.md'
 
 jobs:
-  teacher:
+  editor:
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -48,13 +48,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Run Teacher on each changed draft
+      - name: Run Editor on each changed draft
         if: steps.changed-files.outputs.files != '' && steps.changed-files.outputs.files != '[]'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo '${{ steps.changed-files.outputs.files }}' | jq -r '.[]' | while read file; do
-            echo "Teacher reviewing: $file"
-            python scripts/teacher.py "$file"
+            echo "Editor reviewing: $file"
+            python scripts/editor.py "$file"
           done
