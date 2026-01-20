@@ -104,4 +104,4 @@ Monochrome cameras challenge that assumption. They reintroduce commitment. They 
 
 For the first time in decades, choosing black and white at the moment of capture is no longer an afterthought.
 
-It is a deliberate choice again. 
+It is a deliberate choice again.
