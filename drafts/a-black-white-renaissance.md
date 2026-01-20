@@ -1,6 +1,6 @@
 # A Black & White Renaissance
 
-Launching a monochrome digital camera could have seemed irrational, as long as it was only a Leica eccentricity, but when, after seven models coming out of Wetzlar, Ricoh follows suit with the GR IV Monochrome, one has to admit there is a real market for it.
+For two decades, black-and-white photography has been an afterthought—a filter applied after the fact. That's changing.
 
 ## When the camera was the film
 
@@ -9,8 +9,6 @@ For the first 150 years, photography was made on film, and the film you used dic
 At the beginning, that film was black and white, because that was all there was. Color came later. Before taking a single photograph, you made a decision. You loaded a roll of film, and that decision defined the camera you were holding.
 
 If the film were black-and-white, your camera would be a black-and-white camera.
-
-If the film were color, your camera was a color camera.
 
 This mattered. It shaped how you looked at the world before you raised the camera to your eye. It determined what you paid attention to, what you ignored, and what you expected the image to become. Black and white and color were not effects applied later. They were distinct modes, chosen in advance, each with its own constraints and intentions.
 
@@ -40,7 +38,7 @@ Over the years, they released the M9 Monochrom, Typ 246, M10 Monochrom, and M11 
 
 They are also priced exactly like Leica cameras. Expensive, yes, but not meaningfully more expensive than their color equivalents.
 
-That matters. If these cameras were not selling, Leica would have stopped making them. They didn’t. While Leica doesn’t break revenue down by product line, it included in the [press release](https://leica-camera.com/de-AT/press/leica-camera-group-increased-its-sale-revenues-third-time-succession) announcing a record 2024 revenue that:
+That matters. If these cameras were not selling, Leica would have stopped making them. They didn’t. While Leica doesn’t break revenue down by product line, it is included in the [press release](https://leica-camera.com/de-AT/press/leica-camera-group-increased-its-sale-revenues-third-time-succession) announcing a record 2024 revenue that:
 
 > The road to success that brought the record results will be consistently followed in the current financial year (1 April 2023 to 31 March 2024). Alongside the Leica M11 Monochrom (with a black-and-white camera sensor), the Leica M11-P stands as a world’s first and a further milestone in the Leica M-System, which has been the flagship of the company since 1954 and will be celebrating its 70th anniversary in 2024.
 
@@ -62,7 +60,7 @@ For me, color is often a distraction. Once I start thinking about color relation
 
 If monochrome digital cameras are compelling, the obvious question follows: why has Leica been the only one to make them?
 
-The interest exists. In photography forums, people ask why their preferred brand does not offer a black-and-white-only camera. This is especially visible in the Fujifilm community, and that is not accidental. Fuji’s X cameras emphasize physical controls and direct interaction. The X-Pro line even includes an optical viewfinder. Its audience values intention and constraint.
+The interest exists. In photography forums, people ask why their preferred brand does not offer a black-and-white-only camera. A [cursory search on the popular FujiRumors site](https://www.fujirumors.com/?s=monochrome) shows how important the subject is to Fuji users, and that is not accidental. Fuji’s X cameras emphasize physical controls and direct interaction. The X-Pro line even includes an optical viewfinder. Its audience values intention and constraint.
 
 The explanation is economic.
 
