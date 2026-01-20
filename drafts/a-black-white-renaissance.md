@@ -2,6 +2,8 @@
 
 For two decades, black-and-white photography has been an afterthought—a filter applied after the fact. That's changing.
 
+Ricoh just made a $1,800 bet that photographers are tired of treating black-and-white as an afterthought.
+
 ## When the camera was the film
 
 For the first 150 years, photography was made on film, and the film you used dictated whether your camera was a color or a black-and-white camera.
@@ -38,7 +40,7 @@ Over the years, they released the M9 Monochrom, Typ 246, M10 Monochrom, and M11 
 
 They are also priced exactly like Leica cameras. Expensive, yes, but not meaningfully more expensive than their color equivalents.
 
-That matters. If these cameras were not selling, Leica would have stopped making them. They didn’t. While Leica doesn’t break revenue down by product line, it is included in the [press release](https://leica-camera.com/de-AT/press/leica-camera-group-increased-its-sale-revenues-third-time-succession) announcing a record 2024 revenue that:
+If these cameras were not selling, Leica would have stopped making them. They didn’t. While Leica doesn’t break revenue down by product line, it is included in the [press release](https://leica-camera.com/de-AT/press/leica-camera-group-increased-its-sale-revenues-third-time-succession) announcing a record 2024 revenue that:
 
 > The road to success that brought the record results will be consistently followed in the current financial year (1 April 2023 to 31 March 2024). Alongside the Leica M11 Monochrom (with a black-and-white camera sensor), the Leica M11-P stands as a world’s first and a further milestone in the Leica M-System, which has been the flagship of the company since 1954 and will be celebrating its 70th anniversary in 2024.
 
@@ -46,11 +48,9 @@ That matters. If these cameras were not selling, Leica would have stopped making
 
 A monochrome sensor records only one thing: how much light each pixel receives. A color sensor does the same thing, except it measures light through red, green, and blue filters and reconstructs color from that information.
 
-Two technical consequences follow. First, resolution. In a color sensor, each output pixel is reconstructed from red, green, and blue samples. In a monochrome sensor, every pixel records luminance. All else being equal, this produces higher effective resolution. Second, sharpness. Color sensors place a filter array in front of the sensor. Monochrome sensors do not. Less sits between the light and the photosite.
+Two technical consequences follow. First, resolution. In a color sensor, each output pixel is reconstructed from red, green, and blue samples. In a monochrome sensor, every pixel records luminance. All else being equal, this produces higher effective resolution. Second, sharpness. Color sensors place a filter array in front of the sensor. Monochrome sensors capture more detail—no color filters mean sharper images. But the real difference is perceptual.
 
-These advantages are real, but secondary.
-
-The more important shift is perceptual. When you know that your camera records only light, not color, you approach scenes differently. You stop evaluating hue and focus on structure, contrast, shadows, and highlights.
+When I know my camera records only light, not color, I approach scenes differently. I stop evaluating hue and instead focus on structure, contrast, shadows, and highlights.
 
 This is familiar to anyone who has shot black-and-white film. The decision removes one variable before you ever press the shutter. That constraint narrows attention and forces clarity.
 
@@ -101,5 +101,3 @@ For a long time, black and white in digital photography has been treated as a by
 Monochrome cameras challenge that assumption. They reintroduce commitment. They force a decision before the shutter is pressed, not after. They restore black and white as a way of seeing, not a setting applied later.
 
 For the first time in decades, choosing black and white at the moment of capture is no longer an afterthought.
-
-It is a deliberate choice again.
