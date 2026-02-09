@@ -1,0 +1,31 @@
+{
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/p3ob7o/Monochrome",
+				"ref": "redesign/monochrome-theme",
+				"path": "theme/monochrome"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "Monochrome",
+				"blogdescription": "Black & white photography and writing"
+			}
+		},
+		{
+			"step": "login"
+		}
+	]
+}
