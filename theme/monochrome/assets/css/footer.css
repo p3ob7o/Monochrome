@@ -40,6 +40,17 @@
 	transition: color var(--transition-mode);
 }
 
+.site-footer__wp-link {
+	color: var(--color-text-muted);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+.site-footer__wp-link:hover {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
 /* --------------------------------------------------------------------------
    Social + Toggle (right)
    -------------------------------------------------------------------------- */
