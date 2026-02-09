@@ -13,7 +13,7 @@
 	right: 0;
 	z-index: 100;
 	height: var(--space-16);
-	background-color: rgba(10, 10, 10, 0.9);
+	background-color: rgba(10, 10, 10, 0.75);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
 	border-bottom: 1px solid var(--color-border);
@@ -28,7 +28,7 @@
 }
 
 [data-color-mode="light"] .site-header {
-	background-color: rgba(245, 240, 235, 0.9);
+	background-color: rgba(245, 240, 235, 0.75);
 }
 
 .site-header__inner {
