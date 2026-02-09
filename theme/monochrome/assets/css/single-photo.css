@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Monochrome — Photo Detail Page
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Featured Image
+   -------------------------------------------------------------------------- */
+
+.single-photo__image-wrap {
+	margin: 0;
+}
+
+.single-photo__image img {
+	width: 100%;
+	height: auto;
+	border-radius: 0 !important;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   2. Metadata Row
+   -------------------------------------------------------------------------- */
+
+.single-photo__meta {
+	margin-top: 0 !important;
+}
+
+.single-photo__meta-row {
+	align-items: baseline;
+	margin-bottom: 0 !important;
+}
+
+.single-photo__meta-left {
+	flex: 1;
+}
+
+.single-photo__meta-right {
+	flex: 0 0 auto;
+	text-align: right;
+}
+
+.single-photo__title {
+	color: var(--color-text-primary) !important;
+	transition: color var(--transition-mode);
+}
+
+.single-photo__date {
+	white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   3. Divider
+   -------------------------------------------------------------------------- */
+
+.single-photo__divider {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	border: none !important;
+	height: 1px !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Post Content / Writing
+   -------------------------------------------------------------------------- */
+
+.single-photo__content {
+	font-family: var(--font-body);
+	font-size: var(--text-lg);
+	line-height: var(--leading-lg);
+}
+
+.single-photo__content p {
+	font-family: var(--font-body);
+	font-size: var(--text-lg);
+	line-height: var(--leading-lg);
+}
+
+/* --------------------------------------------------------------------------
+   5. Prev/Next Navigation
+   -------------------------------------------------------------------------- */
+
+.single-photo__pagination {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.single-photo__prev a,
+.single-photo__next a {
+	font-family: var(--font-ui);
+	font-size: var(--text-sm);
+	color: var(--color-text-secondary);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+.single-photo__prev a:hover,
+.single-photo__next a:hover {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+	.single-photo__meta-row {
+		flex-direction: column !important;
+	}
+
+	.single-photo__meta-right {
+		text-align: left;
+	}
+}

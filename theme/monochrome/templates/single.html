@@ -1,10 +1,62 @@
 <!-- wp:template-part {"slug":"header","area":"header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
-<main class="wp-block-group">
-	<!-- wp:post-title {"level":1} /-->
-	<!-- wp:post-featured-image /-->
-	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+<!-- wp:group {"tagName":"main","className":"single-photo","layout":{"type":"default"}} -->
+<main class="wp-block-group single-photo">
+
+	<!-- Large photo, centered, max-width 1400px -->
+	<!-- wp:group {"className":"single-photo__image-wrap","style":{"spacing":{"padding":{"top":"var:preset|spacing|8","left":"var:preset|spacing|6","right":"var:preset|spacing|6"}}},"layout":{"type":"constrained","contentSize":"1400px"}} -->
+	<div class="wp-block-group single-photo__image-wrap" style="padding-top:var(--wp--preset--spacing--8);padding-left:var(--wp--preset--spacing--6);padding-right:var(--wp--preset--spacing--6)">
+		<!-- wp:post-featured-image {"className":"single-photo__image"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Metadata row: title left, date right -->
+	<!-- wp:group {"className":"single-photo__meta","style":{"spacing":{"padding":{"top":"var:preset|spacing|6","bottom":"var:preset|spacing|6","left":"var:preset|spacing|6","right":"var:preset|spacing|6"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1400px"}} -->
+	<div class="wp-block-group single-photo__meta" style="padding-top:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--6);padding-left:var(--wp--preset--spacing--6);padding-right:var(--wp--preset--spacing--6);margin-top:0">
+		<!-- wp:columns {"className":"single-photo__meta-row","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|4"}}}} -->
+		<div class="wp-block-columns single-photo__meta-row">
+			<!-- wp:column {"className":"single-photo__meta-left"} -->
+			<div class="wp-block-column single-photo__meta-left">
+				<!-- wp:post-title {"level":1,"className":"single-photo__title","style":{"typography":{"fontSize":"var:preset|font-size|3-xl","fontStyle":"normal","fontWeight":"500","lineHeight":"1.15"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"space-grotesk"} /-->
+			</div>
+			<!-- /wp:column -->
+
+			<!-- wp:column {"className":"single-photo__meta-right"} -->
+			<div class="wp-block-column single-photo__meta-right">
+				<!-- wp:post-date {"format":"Y-m-d","className":"single-photo__date","style":{"typography":{"fontSize":"var:preset|font-size|sm"},"color":{"text":"var:custom|color-text-secondary"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"space-grotesk"} /-->
+			</div>
+			<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Border separator -->
+	<!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|6","right":"var:preset|spacing|6"}}},"layout":{"type":"constrained","contentSize":"1400px"}} -->
+	<div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--6);padding-right:var(--wp--preset--spacing--6)">
+		<!-- wp:separator {"style":{"color":{"background":"var:custom|color-border"}},"className":"single-photo__divider"} -->
+		<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background single-photo__divider" style="background-color:var(--color-border);color:var(--color-border)"/>
+		<!-- /wp:separator -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Writing / post content -->
+	<!-- wp:group {"className":"single-photo__content","style":{"spacing":{"padding":{"top":"var:preset|spacing|8","bottom":"var:preset|spacing|12","left":"var:preset|spacing|6","right":"var:preset|spacing|6"}}},"layout":{"type":"constrained","contentSize":"65ch"}} -->
+	<div class="wp-block-group single-photo__content" style="padding-top:var(--wp--preset--spacing--8);padding-bottom:var(--wp--preset--spacing--12);padding-left:var(--wp--preset--spacing--6);padding-right:var(--wp--preset--spacing--6)">
+		<!-- wp:post-content {"layout":{"type":"constrained","contentSize":"65ch"}} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Prev/Next navigation -->
+	<!-- wp:group {"className":"single-photo__nav","style":{"spacing":{"padding":{"top":"var:preset|spacing|8","bottom":"var:preset|spacing|8","left":"var:preset|spacing|6","right":"var:preset|spacing|6"}},"border":{"top":{"color":"var:custom|color-border","width":"1px"}}},"layout":{"type":"constrained","contentSize":"1400px"}} -->
+	<div class="wp-block-group single-photo__nav" style="border-top-color:var(--color-border);border-top-width:1px;padding-top:var(--wp--preset--spacing--8);padding-bottom:var(--wp--preset--spacing--8);padding-left:var(--wp--preset--spacing--6);padding-right:var(--wp--preset--spacing--6)">
+		<!-- wp:query-pagination {"className":"single-photo__pagination","layout":{"type":"flex","justifyContent":"space-between"}} -->
+			<!-- wp:previous-post-link {"label":"← Previous","className":"single-photo__prev","style":{"typography":{"fontSize":"var:preset|font-size|sm"},"color":{"text":"var:custom|color-text-secondary"}},"fontFamily":"space-grotesk"} /-->
+			<!-- wp:next-post-link {"label":"Next →","className":"single-photo__next","style":{"typography":{"fontSize":"var:preset|font-size|sm"},"color":{"text":"var:custom|color-text-secondary"}},"fontFamily":"space-grotesk"} /-->
+		<!-- /wp:query-pagination -->
+	</div>
+	<!-- /wp:group -->
+
 </main>
 <!-- /wp:group -->
 

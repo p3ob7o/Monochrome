@@ -47,6 +47,14 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
+	// Single photo detail page styles.
+	wp_enqueue_style(
+		'monochrome-single-photo',
+		get_theme_file_uri( 'assets/css/single-photo.css' ),
+		array( 'monochrome-base' ),
+		MONOCHROME_VERSION
+	);
+
 	// Dark/light mode toggle script.
 	wp_enqueue_script(
 		'monochrome-color-mode',
