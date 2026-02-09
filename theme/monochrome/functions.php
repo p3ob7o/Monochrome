@@ -55,14 +55,6 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
-	// Lightbox styles.
-	wp_enqueue_style(
-		'monochrome-lightbox',
-		get_theme_file_uri( 'assets/css/lightbox.css' ),
-		array( 'monochrome-base' ),
-		MONOCHROME_VERSION
-	);
-
 	// Dark/light mode toggle script.
 	wp_enqueue_script(
 		'monochrome-color-mode',
@@ -90,14 +82,6 @@ function monochrome_enqueue_assets() {
 		true
 	);
 
-	// Lightbox for single photo pages.
-	wp_enqueue_script(
-		'monochrome-lightbox',
-		get_theme_file_uri( 'assets/js/lightbox.js' ),
-		array(),
-		MONOCHROME_VERSION,
-		true
-	);
 }
 add_action( 'wp_enqueue_scripts', 'monochrome_enqueue_assets' );
 
