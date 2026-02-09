@@ -79,10 +79,24 @@
    5. Prev/Next Navigation
    -------------------------------------------------------------------------- */
 
-.single-photo__pagination {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.single-photo__nav.wp-block-group {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.single-photo__prev,
+.single-photo__next {
+	margin: 0 !important;
+}
+
+.single-photo__next {
+	margin-left: auto !important;
+	text-align: right;
 }
 
 .single-photo__prev a,
