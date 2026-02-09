@@ -55,6 +55,14 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
+	// Lightbox styles.
+	wp_enqueue_style(
+		'monochrome-lightbox',
+		get_theme_file_uri( 'assets/css/lightbox.css' ),
+		array( 'monochrome-base' ),
+		MONOCHROME_VERSION
+	);
+
 	// Dark/light mode toggle script.
 	wp_enqueue_script(
 		'monochrome-color-mode',
@@ -77,6 +85,15 @@ function monochrome_enqueue_assets() {
 	wp_enqueue_script(
 		'monochrome-gallery',
 		get_theme_file_uri( 'assets/js/gallery.js' ),
+		array(),
+		MONOCHROME_VERSION,
+		true
+	);
+
+	// Lightbox for single photo pages.
+	wp_enqueue_script(
+		'monochrome-lightbox',
+		get_theme_file_uri( 'assets/js/lightbox.js' ),
 		array(),
 		MONOCHROME_VERSION,
 		true
