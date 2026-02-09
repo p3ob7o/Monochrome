@@ -44,11 +44,18 @@
 	color: var(--color-text-muted);
 	text-decoration: none;
 	transition: color var(--transition-fast);
+	display: inline-flex;
+	align-items: center;
+	vertical-align: middle;
 }
 
 .site-footer__wp-link:hover {
 	color: var(--color-accent);
 	text-decoration: none;
+}
+
+.site-footer__wp-link svg {
+	display: block;
 }
 
 /* --------------------------------------------------------------------------
