@@ -67,13 +67,30 @@
 	margin: 0 !important;
 }
 
+/* Stretch the title link to cover the entire hero */
 .hero__title a {
 	color: #FFFFFF !important;
 	text-decoration: none !important;
 }
 
+.hero__title a::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+}
+
 .hero__title a:hover {
 	text-decoration: none !important;
+}
+
+/* Ensure the cover is the positioning context for the stretched link */
+.hero.wp-block-cover {
+	position: relative;
+	cursor: pointer;
 }
 
 /* Caption: white at 80% opacity */
