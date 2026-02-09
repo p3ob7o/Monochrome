@@ -1,8 +1,37 @@
-<!-- wp:group {"tagName":"header","className":"site-header","layout":{"type":"default"}} -->
-<header class="wp-block-group site-header">
-	<!-- Placeholder — built in Section 2 -->
-	<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|space-grotesk","textTransform":"uppercase","letterSpacing":"0.08em","fontWeight":"700"}},"className":"wordmark"} -->
-	<p class="wordmark" style="font-family:var(--wp--preset--font-family--space-grotesk);text-transform:uppercase;letter-spacing:0.08em;font-weight:700">MONOCHROME</p>
-	<!-- /wp:paragraph -->
+<!-- wp:html -->
+<header class="site-header" role="banner">
+	<div class="site-header__inner">
+		<div class="site-header__brand">
+			<a href="https://monochrome.photo" class="wordmark site-header__wordmark">MONOCHROME</a>
+			<span class="site-header__tagline">by Paolo Belcastro</span>
+		</div>
+		<div class="site-header__right">
+			<nav class="site-header__nav" aria-label="Main navigation">
+				<a href="https://monochrome.blog" class="nav-link" data-domain="monochrome.blog">BLOG</a>
+				<a href="https://monochrome.photo" class="nav-link" data-domain="monochrome.photo">PHOTO</a>
+			</nav>
+			<button class="color-mode-toggle" type="button" aria-label="Switch to light mode">
+				<span class="color-mode-toggle__icon" aria-hidden="true">&#9728;</span>
+			</button>
+			<button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+				<span class="mobile-menu-toggle__bar"></span>
+				<span class="mobile-menu-toggle__bar"></span>
+				<span class="mobile-menu-toggle__bar"></span>
+			</button>
+		</div>
+	</div>
 </header>
-<!-- /wp:group -->
+
+<div class="mobile-menu" hidden>
+	<div class="mobile-menu__inner">
+		<nav class="mobile-menu__nav" aria-label="Mobile navigation">
+			<a href="https://monochrome.blog" class="mobile-menu__link nav-link" data-domain="monochrome.blog">BLOG</a>
+			<a href="https://monochrome.photo" class="mobile-menu__link nav-link" data-domain="monochrome.photo">PHOTO</a>
+		</nav>
+		<button class="color-mode-toggle mobile-menu__toggle" type="button" aria-label="Switch to light mode">
+			<span class="color-mode-toggle__icon" aria-hidden="true">&#9728;</span>
+			<span class="color-mode-toggle__label">Light mode</span>
+		</button>
+	</div>
+</div>
+<!-- /wp:html -->

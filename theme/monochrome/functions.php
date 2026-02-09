@@ -23,6 +23,14 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
+	// Header and navigation styles.
+	wp_enqueue_style(
+		'monochrome-header',
+		get_theme_file_uri( 'assets/css/header.css' ),
+		array( 'monochrome-base' ),
+		MONOCHROME_VERSION
+	);
+
 	// Dark/light mode toggle script.
 	wp_enqueue_script(
 		'monochrome-color-mode',
@@ -30,6 +38,15 @@ function monochrome_enqueue_assets() {
 		array(),
 		MONOCHROME_VERSION,
 		false // Load in head so it runs before paint to prevent flash.
+	);
+
+	// Navigation script (mobile menu, active link detection).
+	wp_enqueue_script(
+		'monochrome-navigation',
+		get_theme_file_uri( 'assets/js/navigation.js' ),
+		array(),
+		MONOCHROME_VERSION,
+		true
 	);
 }
 add_action( 'wp_enqueue_scripts', 'monochrome_enqueue_assets' );
