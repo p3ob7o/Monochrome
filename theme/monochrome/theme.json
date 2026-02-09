@@ -68,61 +68,12 @@
 				{
 					"fontFamily": "\"Space Grotesk\", system-ui, sans-serif",
 					"name": "Space Grotesk",
-					"slug": "space-grotesk",
-					"fontFace": [
-						{
-							"fontFamily": "Space Grotesk",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2"
-							]
-						},
-						{
-							"fontFamily": "Space Grotesk",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2"
-							]
-						},
-						{
-							"fontFamily": "Space Grotesk",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2"
-							]
-						}
-					]
+					"slug": "space-grotesk"
 				},
 				{
 					"fontFamily": "\"Source Serif 4\", Georgia, serif",
 					"name": "Source Serif 4",
-					"slug": "source-serif-4",
-					"fontFace": [
-						{
-							"fontFamily": "Source Serif 4",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"https://fonts.gstatic.com/s/sourceserif4/v8/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjipdqpg.woff2"
-							]
-						},
-						{
-							"fontFamily": "Source Serif 4",
-							"fontWeight": "600",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"https://fonts.gstatic.com/s/sourceserif4/v8/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjipdqpg.woff2"
-							]
-						}
-					]
+					"slug": "source-serif-4"
 				}
 			],
 			"fontSizes": [
