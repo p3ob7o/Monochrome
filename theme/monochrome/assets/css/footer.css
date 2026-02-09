@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Monochrome — Footer
+   ========================================================================== */
+
+.site-footer {
+	border-top: 1px solid var(--color-border);
+	padding: var(--space-8) var(--space-6);
+	transition:
+		border-color var(--transition-mode),
+		background-color var(--transition-mode);
+}
+
+.site-footer__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: var(--hero-max-width);
+	margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Credit (left)
+   -------------------------------------------------------------------------- */
+
+.site-footer__brand {
+	font-family: var(--font-ui);
+	font-size: var(--text-sm);
+	color: var(--color-text-secondary);
+	transition: color var(--transition-mode);
+}
+
+/* --------------------------------------------------------------------------
+   Tagline (center)
+   -------------------------------------------------------------------------- */
+
+.site-footer__tagline {
+	font-family: var(--font-ui);
+	font-size: var(--text-sm);
+	color: var(--color-text-muted);
+	transition: color var(--transition-mode);
+}
+
+/* --------------------------------------------------------------------------
+   Social + Toggle (right)
+   -------------------------------------------------------------------------- */
+
+.site-footer__right {
+	display: flex;
+	align-items: center;
+	gap: var(--space-4);
+}
+
+.site-footer__social {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+}
+
+.site-footer__social-link {
+	color: var(--color-text-muted);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+	display: flex;
+	align-items: center;
+}
+
+.site-footer__social-link:hover {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
+.site-footer__social-link svg {
+	display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+	.site-footer__inner {
+		flex-direction: column;
+		gap: var(--space-4);
+		text-align: center;
+	}
+
+	.site-footer__right {
+		gap: var(--space-6);
+	}
+}

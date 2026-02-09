@@ -47,6 +47,14 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
+	// Footer styles.
+	wp_enqueue_style(
+		'monochrome-footer',
+		get_theme_file_uri( 'assets/css/footer.css' ),
+		array( 'monochrome-base' ),
+		MONOCHROME_VERSION
+	);
+
 	// Single photo detail page styles.
 	wp_enqueue_style(
 		'monochrome-single-photo',
