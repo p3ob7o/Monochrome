@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Monochrome — Hero
+   ========================================================================== */
+
+.hero {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.hero__link {
+	display: block;
+	position: relative;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.hero__link:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Image
+   -------------------------------------------------------------------------- */
+
+.hero__image-wrapper {
+	width: 100%;
+	max-height: 75vh;
+	min-height: 70vh;
+	overflow: hidden;
+}
+
+.hero__image {
+	width: 100%;
+	height: 70vh;
+	max-height: 75vh;
+	object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Title Overlay
+   -------------------------------------------------------------------------- */
+
+.hero__overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: var(--space-8) var(--space-6);
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.7) 0%,
+		rgba(0, 0, 0, 0.3) 60%,
+		transparent 100%
+	);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+}
+
+.hero__title {
+	font-family: var(--font-display);
+	font-weight: var(--font-weight-bold);
+	font-size: var(--text-4xl);
+	line-height: var(--leading-4xl);
+	color: #FFFFFF;
+	margin: 0;
+	/* Always white over image, regardless of color mode */
+}
+
+.hero__caption {
+	font-family: var(--font-ui);
+	font-size: var(--text-sm);
+	line-height: var(--leading-sm);
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+	.hero__image-wrapper {
+		min-height: 60vh;
+	}
+
+	.hero__image {
+		height: 60vh;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero__image-wrapper {
+		min-height: 50vh;
+	}
+
+	.hero__image {
+		height: 50vh;
+	}
+
+	.hero__title {
+		font-size: var(--text-3xl);
+	}
+
+	.hero__overlay {
+		padding: var(--space-6) var(--space-4);
+	}
+}

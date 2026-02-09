@@ -31,6 +31,14 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
+	// Hero styles.
+	wp_enqueue_style(
+		'monochrome-hero',
+		get_theme_file_uri( 'assets/css/hero.css' ),
+		array( 'monochrome-base' ),
+		MONOCHROME_VERSION
+	);
+
 	// Dark/light mode toggle script.
 	wp_enqueue_script(
 		'monochrome-color-mode',
