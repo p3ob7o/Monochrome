@@ -2,44 +2,44 @@
    Monochrome — Hero
    ========================================================================== */
 
-.hero {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-}
-
-.hero__link {
-	display: block;
-	position: relative;
-	text-decoration: none;
-	color: #FFFFFF;
-}
-
-.hero__link:hover {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-
 /* --------------------------------------------------------------------------
-   Image
+   1. Hero Query & Template
    -------------------------------------------------------------------------- */
 
-.hero__image-wrapper {
-	width: 100%;
-	max-height: 75vh;
-	min-height: 70vh;
-	overflow: hidden;
+/* Remove any default spacing/padding from the query wrapper */
+.hero-query {
+	margin: 0;
+	padding: 0;
 }
 
-.hero__image {
-	width: 100%;
-	height: 70vh;
-	max-height: 75vh;
-	object-fit: cover;
+.hero-query .wp-block-post-template {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hero-query .wp-block-post {
+	margin: 0;
+	padding: 0;
 }
 
 /* --------------------------------------------------------------------------
-   Title Overlay
+   2. Cover Block as Hero
+   -------------------------------------------------------------------------- */
+
+.hero.wp-block-cover {
+	overflow: hidden;
+}
+
+/* Ensure the featured image covers the full area */
+.hero.wp-block-cover .wp-block-cover__image-background {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. Title Overlay
    -------------------------------------------------------------------------- */
 
 .hero__overlay {
@@ -47,7 +47,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: var(--space-8) var(--space-6);
+	z-index: 1;
 	background: linear-gradient(
 		to top,
 		rgba(0, 0, 0, 0.7) 0%,
@@ -59,51 +59,61 @@
 	gap: var(--space-2);
 }
 
+/* Title: always white over image, regardless of color mode */
 .hero__title {
-	font-family: var(--font-display);
-	font-weight: var(--font-weight-bold);
-	font-size: var(--text-4xl);
-	line-height: var(--leading-4xl);
-	color: #FFFFFF;
-	margin: 0;
-	/* Always white over image, regardless of color mode */
+	font-family: var(--font-display) !important;
+	font-weight: var(--font-weight-bold) !important;
+	color: #FFFFFF !important;
+	margin: 0 !important;
 }
 
+.hero__title a {
+	color: #FFFFFF !important;
+	text-decoration: none !important;
+}
+
+.hero__title a:hover {
+	text-decoration: none !important;
+}
+
+/* Caption: white at 80% opacity */
 .hero__caption {
-	font-family: var(--font-ui);
-	font-size: var(--text-sm);
-	line-height: var(--leading-sm);
-	color: rgba(255, 255, 255, 0.8);
+	font-family: var(--font-ui) !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	margin: 0 !important;
 }
 
 /* --------------------------------------------------------------------------
-   Responsive
+   4. Inner container positioning
+   -------------------------------------------------------------------------- */
+
+/* Override the default centered layout of cover inner container */
+.hero.wp-block-cover .wp-block-cover__inner-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	max-width: none;
+	padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Responsive
    -------------------------------------------------------------------------- */
 
 @media (max-width: 1024px) {
-	.hero__image-wrapper {
-		min-height: 60vh;
-	}
-
-	.hero__image {
-		height: 60vh;
+	.hero.wp-block-cover {
+		min-height: 60vh !important;
 	}
 }
 
 @media (max-width: 768px) {
-	.hero__image-wrapper {
-		min-height: 50vh;
-	}
-
-	.hero__image {
-		height: 50vh;
-	}
-
-	.hero__title {
-		font-size: var(--text-3xl);
-	}
-
-	.hero__overlay {
-		padding: var(--space-6) var(--space-4);
+	.hero.wp-block-cover {
+		min-height: 50vh !important;
 	}
 }
