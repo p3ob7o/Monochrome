@@ -7,8 +7,10 @@
    -------------------------------------------------------------------------- */
 
 /* Remove any default spacing/padding from the query wrapper */
+/* Pull hero up behind the fixed header for full-bleed effect */
 .hero-query {
 	margin: 0;
+	margin-top: calc(-1 * var(--space-16));
 	padding: 0;
 }
 
