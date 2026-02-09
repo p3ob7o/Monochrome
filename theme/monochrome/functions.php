@@ -63,6 +63,14 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
+	// Subscribe form styles.
+	wp_enqueue_style(
+		'monochrome-subscribe',
+		get_theme_file_uri( 'assets/css/subscribe.css' ),
+		array( 'monochrome-base' ),
+		MONOCHROME_VERSION
+	);
+
 	// Dark/light mode toggle script.
 	wp_enqueue_script(
 		'monochrome-color-mode',
