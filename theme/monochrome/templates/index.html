@@ -24,15 +24,32 @@
 	</div>
 	<!-- /wp:query -->
 
-	<!-- Post list (placeholder — replaced by gallery grid in Section 4) -->
-	<!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","sticky":"exclude","inherit":false}} -->
-	<div class="wp-block-query">
-		<!-- wp:post-template {"layout":{"type":"default"}} -->
-			<!-- wp:post-title {"isLink":true} /-->
-			<!-- wp:post-date /-->
-		<!-- /wp:post-template -->
+	<!-- Gallery grid: all posts except sticky -->
+	<!-- wp:group {"className":"gallery-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|24","bottom":"var:preset|spacing|24","left":"var:preset|spacing|6","right":"var:preset|spacing|6"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+	<div class="wp-block-group gallery-section" style="padding-top:var(--wp--preset--spacing--24);padding-bottom:var(--wp--preset--spacing--24);padding-left:var(--wp--preset--spacing--6);padding-right:var(--wp--preset--spacing--6)">
+
+		<!-- wp:query {"queryId":1,"query":{"perPage":24,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","sticky":"exclude","inherit":false},"className":"gallery-query"} -->
+		<div class="wp-block-query gallery-query">
+			<!-- wp:post-template {"className":"gallery-grid"} -->
+
+				<!-- wp:group {"className":"image-card","tagName":"article","layout":{"type":"default"}} -->
+				<article class="wp-block-group image-card">
+					<!-- wp:post-featured-image {"isLink":true,"className":"image-card__frame"} /-->
+					<!-- wp:group {"className":"image-card__overlay","layout":{"type":"default"}} -->
+					<div class="wp-block-group image-card__overlay">
+						<!-- wp:post-title {"level":3,"isLink":true,"className":"image-card__title","style":{"typography":{"fontSize":"var:preset|font-size|base","fontStyle":"normal","fontWeight":"500"},"color":{"text":"#ffffff"},"elements":{"link":{"color":{"text":"#ffffff"}}}},"fontFamily":"space-grotesk"} /-->
+						<!-- wp:post-date {"className":"image-card__date","format":"Y-m-d","style":{"typography":{"fontSize":"var:preset|font-size|sm"},"color":{"text":"rgba(255,255,255,0.8)"},"elements":{"link":{"color":{"text":"rgba(255,255,255,0.8)"}}}},"fontFamily":"space-grotesk"} /-->
+					</div>
+					<!-- /wp:group -->
+				</article>
+				<!-- /wp:group -->
+
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:query -->
+
 	</div>
-	<!-- /wp:query -->
+	<!-- /wp:group -->
 
 </main>
 <!-- /wp:group -->

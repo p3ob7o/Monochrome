@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Monochrome — Gallery Grid
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Grid Layout (CSS Columns for masonry effect)
+   -------------------------------------------------------------------------- */
+
+.gallery-grid {
+	columns: 3;
+	column-gap: var(--space-3);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gallery-grid > .wp-block-post {
+	break-inside: avoid;
+	margin-bottom: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   2. Image Card
+   -------------------------------------------------------------------------- */
+
+.image-card {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* Frame: the featured image container */
+.image-card__frame {
+	margin: 0 !important;
+}
+
+.image-card__frame img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0 !important;
+	transition: transform var(--transition-base);
+}
+
+/* Hover: image scales up */
+.image-card:hover .image-card__frame img {
+	transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   3. Hover Overlay
+   -------------------------------------------------------------------------- */
+
+.image-card__overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	padding: var(--space-4) !important;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.7) 0%,
+		rgba(0, 0, 0, 0.3) 60%,
+		transparent 100%
+	);
+	opacity: 0;
+	transition: opacity var(--transition-base);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.image-card:hover .image-card__overlay {
+	opacity: 1;
+}
+
+/* Title and date always white over image */
+.image-card__title {
+	font-family: var(--font-heading) !important;
+	font-weight: var(--font-weight-medium) !important;
+	color: #FFFFFF !important;
+	margin: 0 !important;
+}
+
+.image-card__title a {
+	color: #FFFFFF !important;
+	text-decoration: none !important;
+}
+
+.image-card__date {
+	font-family: var(--font-ui) !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	margin: 0 !important;
+}
+
+/* Stretch the title link to cover the entire card */
+.image-card__title a::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   4. Scroll Animation (applied by JS)
+   -------------------------------------------------------------------------- */
+
+.image-card {
+	opacity: 0;
+	transform: translateY(16px);
+	transition:
+		opacity 400ms ease-out,
+		transform 400ms ease-out;
+}
+
+.image-card.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   5. Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+	.gallery-grid {
+		columns: 2;
+	}
+}
+
+@media (max-width: 768px) {
+	.gallery-grid {
+		columns: 1;
+	}
+}

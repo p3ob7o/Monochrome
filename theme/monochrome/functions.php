@@ -39,6 +39,14 @@ function monochrome_enqueue_assets() {
 		MONOCHROME_VERSION
 	);
 
+	// Gallery grid styles.
+	wp_enqueue_style(
+		'monochrome-gallery',
+		get_theme_file_uri( 'assets/css/gallery.css' ),
+		array( 'monochrome-base' ),
+		MONOCHROME_VERSION
+	);
+
 	// Dark/light mode toggle script.
 	wp_enqueue_script(
 		'monochrome-color-mode',
@@ -52,6 +60,15 @@ function monochrome_enqueue_assets() {
 	wp_enqueue_script(
 		'monochrome-navigation',
 		get_theme_file_uri( 'assets/js/navigation.js' ),
+		array(),
+		MONOCHROME_VERSION,
+		true
+	);
+
+	// Gallery scroll animations.
+	wp_enqueue_script(
+		'monochrome-gallery',
+		get_theme_file_uri( 'assets/js/gallery.js' ),
 		array(),
 		MONOCHROME_VERSION,
 		true
